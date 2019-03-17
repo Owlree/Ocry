@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
 import json
 
 
@@ -22,6 +15,9 @@ class JsonWriterPipeline(object):
         self.file.close()
 
     def process_item(self, item, spider):
-        line = json.dumps(dict(item), ensure_ascii=False) + "\n"
-        self.file.write(line)
+        line = json.dumps(
+            dict(item), 
+            ensure_ascii=False, 
+            sort_keys=True)
+        self.file.write(line + '\n')
         return item

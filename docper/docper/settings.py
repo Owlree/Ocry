@@ -68,6 +68,17 @@ ITEM_PIPELINES = {
     'docper.pipelines.JsonWriterPipeline': 300,
 }
 
+SPIDER_MIDDLEWARES = { 'docper.middlewares.StickyDepthSpiderMiddleware' : 100 }
+
+DEPTH_LIMIT = 5
+
+RETRY_ENABLED = False
+COOKIES_ENABLED = False
+LOG_LEVEL = 'INFO'
+
+DOWNLOAD_TIMEOUT = 20
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
