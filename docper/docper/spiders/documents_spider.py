@@ -4,7 +4,6 @@ import scrapy
 
 
 class DocumentsSpider(scrapy.spiders.CrawlSpider):
-
     name: str = "documents"
     allowed_domains: List[str] = ["ms.ro"]
     start_urls: List[str] = ["http://www.ms.ro/"]
@@ -23,13 +22,15 @@ class DocumentsSpider(scrapy.spiders.CrawlSpider):
     """Parses a scrapy response and saves links to all pdf files found
     """
     def parse_docs(self, response: scrapy.http.Response):
+        pdfs: List[str] = []
         for url in response.css('a::attr(href)'):
             full = response.urljoin(url.extract())
             if full.endswith('.pdf'):
-                yield {
-                    'document': full,
-                    'from': response.url
-                }
+                pdfs.append(full)
+        yield {
+            'from': response.url,
+            'file_urls': pdfs
+        }
 
     """Filter requests we don't want.
     """
