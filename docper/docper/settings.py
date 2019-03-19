@@ -10,7 +10,7 @@ ITEM_PIPELINES = {
 }
 
 SPIDER_MIDDLEWARES = {
-    'docper.middlewares.StickyDepthSpiderMiddleware': 100
+    'docper.middlewares.StickyDepthSpiderMiddleware': 1
 }
 
 DEPTH_LIMIT = 5
