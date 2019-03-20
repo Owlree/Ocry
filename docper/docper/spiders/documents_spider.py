@@ -3,6 +3,8 @@ from typing import List, Callable
 import scrapy
 
 
+"""Takes links to all pdf files and sends them through the pipeline.
+"""
 class DocumentsSpider(scrapy.spiders.CrawlSpider):
     name: str = "documents"
     allowed_domains: List[str] = ["ms.ro"]
