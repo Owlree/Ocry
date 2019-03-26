@@ -6,14 +6,14 @@ NEWSPIDER_MODULE = 'docper.spiders'
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-    'scrapy.pipelines.files.FilesPipeline': 1
+    'docper.pipelines.DocperFilesPipeline': 1
 }
 
 SPIDER_MIDDLEWARES = {
     'docper.middlewares.StickyDepthSpiderMiddleware': 1
 }
 
-DEPTH_LIMIT = 5
+DEPTH_LIMIT = 1
 
 RETRY_ENABLED = False
 COOKIES_ENABLED = False
