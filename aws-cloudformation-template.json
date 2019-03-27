@@ -1,0 +1,15 @@
+{
+    "Resources": {
+        "Ocry": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "TableName": {
+                    "Description": "The name of the table Docper uses to dump metadata about downloaded documents",
+                    "Value": {
+                        "Ref": "DocperDocumentsTableName"
+                    }
+                }
+            }
+        }
+    }
+}
