@@ -6,7 +6,8 @@ NEWSPIDER_MODULE = 'docper.spiders'
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-    'docper.pipelines.DocperFilesPipeline': 1
+    'docper.pipelines.DocperFilesPipeline': 1,
+    'docper.pipelines.DynamoDBMetadata': 2
 }
 
 SPIDER_MIDDLEWARES = {

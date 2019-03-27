@@ -1,5 +1,6 @@
 import json
 import scrapy
+import boto3
 import scrapy.pipelines.files
 from urllib.parse import urlparse
 
@@ -34,3 +35,16 @@ class DocperFilesPipeline(scrapy.pipelines.files.FilesPipeline):
         netloc: str = urlparse(request.url).netloc
         domain_name = _DOMAIN_NAMES.get(netloc, netloc)
         return path.replace('full/', domain_name + '/')
+
+
+class DynamoDBMetadata:
+    def process_item(self, item, spider):
+        dynamodb = boto3.resource('dynamodb',)
+        table = dynamodb.Table('Docs')
+        
+        for f in item['files']:
+            # remove the path and the extension
+            f['name'] = f['path'].split('/')[-1][:-4]
+            table.put_item(Item=f)
+        
+        return item
