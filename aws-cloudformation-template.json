@@ -20,10 +20,11 @@
                     "height": 60
                 },
                 "position": {
-                    "x": 400,
-                    "y": 90
+                    "x": 620,
+                    "y": 30
                 },
-                "z": 0
+                "z": 0,
+                "embeds": []
             },
             "abf54997-9569-44e0-9b28-814bb2e0b28a": {
                 "size": {
@@ -31,15 +32,28 @@
                     "height": 60
                 },
                 "position": {
-                    "x": 490,
-                    "y": 210
+                    "x": 340,
+                    "y": 200
                 },
-                "z": 0
+                "z": 0,
+                "embeds": [],
+                "dependson": [
+                    "0c458e02-382e-4316-82ff-0c9abf708819"
+                ]
+            },
+            "fb892591-d5d9-4d2e-855a-b7f55b4b3076": {
+                "source": {
+                    "id": "abf54997-9569-44e0-9b28-814bb2e0b28a"
+                },
+                "target": {
+                    "id": "0c458e02-382e-4316-82ff-0c9abf708819"
+                },
+                "z": 1
             }
         }
     },
     "Resources": {
-        "Ocry": {
+        "DocperDB": {
             "Type": "AWS::DynamoDB::Table",
             "Properties": {
                 "TableName": {
@@ -55,21 +69,24 @@
                 }
             }
         },
-        "S3B368WH": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509"
-                }
-            }
-        },
-        "AGV2A2JPVQ": {
+        "DocperAPI": {
             "Type": "AWS::ApiGatewayV2::Api",
             "Properties": {},
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "abf54997-9569-44e0-9b28-814bb2e0b28a"
+                }
+            },
+            "DependsOn": [
+                "DocperDB"
+            ]
+        },
+        "DocperStorage": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509"
                 }
             }
         }
