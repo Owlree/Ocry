@@ -1,4 +1,43 @@
 {
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "0c458e02-382e-4316-82ff-0c9abf708819": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 620,
+                    "y": 100
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 400,
+                    "y": 90
+                },
+                "z": 0
+            },
+            "abf54997-9569-44e0-9b28-814bb2e0b28a": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 490,
+                    "y": 210
+                },
+                "z": 0
+            }
+        }
+    },
     "Resources": {
         "Ocry": {
             "Type": "AWS::DynamoDB::Table",
@@ -8,6 +47,29 @@
                     "Value": {
                         "Ref": "DocperDocumentsTableName"
                     }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0c458e02-382e-4316-82ff-0c9abf708819"
+                }
+            }
+        },
+        "S3B368WH": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509"
+                }
+            }
+        },
+        "AGV2A2JPVQ": {
+            "Type": "AWS::ApiGatewayV2::Api",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "abf54997-9569-44e0-9b28-814bb2e0b28a"
                 }
             }
         }
