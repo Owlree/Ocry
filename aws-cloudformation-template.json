@@ -1,4 +1,33 @@
 {
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "0c458e02-382e-4316-82ff-0c9abf708819": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 630,
+                    "y": 100
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 630,
+                    "y": 30
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
     "Resources": {
         "DocperDB": {
             "Type": "AWS::DynamoDB::Table",
@@ -34,7 +63,37 @@
                         "AttributeType": "S"
                     }
                 ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0c458e02-382e-4316-82ff-0c9abf708819"
+                }
             }
+        },
+        "DocperStorage": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": {
+                    "Ref": "DocperS3BucketName"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509"
+                }
+            }
+        }
+    },
+    "Parameters": {
+        "DocperDBTableName": {
+            "Type": "String",
+            "Default": "DocperDocuments",
+            "Description": "The name of the DynamoDB that Docper should use"
+        },
+        "DocperS3BucketName": {
+            "Type": "String",
+            "Default": "DocperDocuments",
+            "Description": "The name of the S3 bucket that Docper should use"
         }
     }
 }
