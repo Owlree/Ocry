@@ -1,98 +1,40 @@
 {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Metadata": {
-        "AWS::CloudFormation::Designer": {
-            "0c458e02-382e-4316-82ff-0c9abf708819": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 630,
-                    "y": 100
-                },
-                "z": 0,
-                "embeds": []
-            },
-            "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 630,
-                    "y": 30
-                },
-                "z": 0,
-                "embeds": []
-            },
-            "abf54997-9569-44e0-9b28-814bb2e0b28a": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 340,
-                    "y": 200
-                },
-                "z": 0,
-                "embeds": [],
-                "dependson": [
-                    "0c458e02-382e-4316-82ff-0c9abf708819"
-                ]
-            }
-        }
-    },
     "Resources": {
         "DocperDB": {
             "Type": "AWS::DynamoDB::Table",
             "Properties": {
                 "TableName": {
                     "Ref": "DocperDBTableName"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "0c458e02-382e-4316-82ff-0c9abf708819"
-                }
+                },
+                "KeySchema": [
+                    {
+                        "AttributeName": "Name",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": "5",
+                    "WriteCapacityUnits": "5"
+                },
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "Name",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "TheirURL",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "OurURL",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "Checksum",
+                        "AttributeType": "S"
+                    }
+                ]
             }
-        },
-        "DocperAPI": {
-            "Type": "AWS::ApiGatewayV2::Api",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "abf54997-9569-44e0-9b28-814bb2e0b28a"
-                }
-            },
-            "DependsOn": [
-                "DocperDB"
-            ]
-        },
-        "DocperStorage": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-                "BucketName": {
-                    "Ref": "DocperS3BucketName"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "85e2cf8d-1306-4f4f-8dc1-f6fcfef1f509"
-                }
-            }
-        }
-    },
-    "Parameters": {
-        "DocperDBTableName": {
-            "Type": "String",
-            "Default": "DocperDocuments",
-            "Description": "The name of the DynamoDB that Docper should use"
-        },
-        "DocperS3BucketName": {
-            "Type": "String",
-            "Default": "DocperDocuments",
-            "Description": "The name of the S3 bucket that Docper should use"
         }
     }
 }
