@@ -48,14 +48,17 @@
                     "height": 60
                 },
                 "position": {
-                    "x": 390,
-                    "y": 80
+                    "x": 400,
+                    "y": 90
                 },
                 "z": 2,
                 "parent": "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                 "embeds": [],
                 "iscontainedinside": [
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
@@ -72,8 +75,8 @@
                     "height": 100
                 },
                 "position": {
-                    "x": 377,
-                    "y": 56
+                    "x": 380,
+                    "y": 60
                 },
                 "z": 1,
                 "parent": "af816494-f425-45a7-bf88-b36269841cb8",
@@ -81,6 +84,9 @@
                     "f9723173-6dfb-481f-887c-a638cb9eb807"
                 ],
                 "iscontainedinside": [
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
@@ -103,7 +109,13 @@
                 "z": 1,
                 "parent": "af816494-f425-45a7-bf88-b36269841cb8",
                 "embeds": [],
+                "isassociatedwith": [
+                    "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
+                ],
                 "iscontainedinside": [
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
@@ -137,6 +149,9 @@
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8"
                 ]
             },
@@ -148,6 +163,24 @@
                     "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
                 },
                 "z": 3
+            },
+            "aecd4696-84e4-493b-88a5-eaaaf6929a47": {
+                "source": {
+                    "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
+                },
+                "target": {
+                    "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
+                },
+                "z": 3
+            },
+            "000091db-518d-4dac-86ad-3232eab80834": {
+                "source": {
+                    "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
+                },
+                "target": {
+                    "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
+                },
+                "z": 4
             }
         }
     },
@@ -220,6 +253,13 @@
             "Properties": {
                 "RestApiId": {
                     "Ref": "DocperAPI"
+                },
+                "PathPart": "stack",
+                "ParentId": {
+                    "Fn::GetAtt": [
+                        "MyApi",
+                        "RootResourceId"
+                    ]
                 }
             },
             "Metadata": {
@@ -270,6 +310,9 @@
             "Properties": {
                 "RestApiId": {
                     "Ref": "DocperAPI"
+                },
+                "DeploymentId": {
+                    "Ref": "Dep1"
                 }
             },
             "Metadata": {
