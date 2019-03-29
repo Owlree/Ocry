@@ -37,9 +37,9 @@
                 },
                 "z": 0,
                 "embeds": [
-                    "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "e08a9b03-443e-4b34-8dae-b84b7130c6a6",
-                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3"
+                    "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
                 ]
             },
             "f9723173-6dfb-481f-887c-a638cb9eb807": {
@@ -56,6 +56,11 @@
                 "embeds": [],
                 "iscontainedinside": [
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
@@ -84,6 +89,11 @@
                     "f9723173-6dfb-481f-887c-a638cb9eb807"
                 ],
                 "iscontainedinside": [
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
@@ -123,6 +133,11 @@
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8"
                 ]
             },
@@ -152,35 +167,16 @@
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8"
+                ],
+                "dependson": [
+                    "f9723173-6dfb-481f-887c-a638cb9eb807"
                 ]
-            },
-            "573662d0-5d1d-484f-9d03-392ee8559d19": {
-                "source": {
-                    "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
-                },
-                "target": {
-                    "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
-                },
-                "z": 3
-            },
-            "aecd4696-84e4-493b-88a5-eaaaf6929a47": {
-                "source": {
-                    "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
-                },
-                "target": {
-                    "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
-                },
-                "z": 3
-            },
-            "000091db-518d-4dac-86ad-3232eab80834": {
-                "source": {
-                    "id": "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
-                },
-                "target": {
-                    "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
-                },
-                "z": 4
             }
         }
     },
@@ -204,18 +200,6 @@
                 "AttributeDefinitions": [
                     {
                         "AttributeName": "Name",
-                        "AttributeType": "S"
-                    },
-                    {
-                        "AttributeName": "TheirURL",
-                        "AttributeType": "S"
-                    },
-                    {
-                        "AttributeName": "OurURL",
-                        "AttributeType": "S"
-                    },
-                    {
-                        "AttributeName": "Checksum",
                         "AttributeType": "S"
                     }
                 ]
@@ -241,7 +225,9 @@
         },
         "DocperAPI": {
             "Type": "AWS::ApiGateway::RestApi",
-            "Properties": {},
+            "Properties": {
+                "Name": "DocperAPI"
+            },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "af816494-f425-45a7-bf88-b36269841cb8"
@@ -257,7 +243,7 @@
                 "PathPart": "stack",
                 "ParentId": {
                     "Fn::GetAtt": [
-                        "MyApi",
+                        "DocperAPI",
                         "RootResourceId"
                     ]
                 }
@@ -294,16 +280,16 @@
             "Properties": {
                 "RestApiId": {
                     "Ref": "DocperAPI"
-                },
-                "StageName": {
-                    "Ref": "TestingStage"
                 }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "e08a9b03-443e-4b34-8dae-b84b7130c6a6"
                 }
-            }
+            },
+            "DependsOn": [
+                "GetDocument"
+            ]
         },
         "TestingStage": {
             "Type": "AWS::ApiGateway::Stage",
