@@ -3,8 +3,8 @@ from typing import List
 import os
 import subprocess
 
-import boto3
 import botocore
+import boto3
 
 
 """Returns an iterator through all the items in a S3 bucket.
