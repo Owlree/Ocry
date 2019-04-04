@@ -7,6 +7,8 @@ import botocore
 import boto3
 
 
+BUCKET_NAME: str = 'ocry-czl'
+
 """Returns an iterator through all the items in a S3 bucket.
 """
 def bucket_items(bucket: str):
@@ -26,7 +28,7 @@ if __name__ == '__main__':
         no_extension_name: str = pdf_name[:-len('.pdf')]
         tiff_name: str = no_extension_name + '.tiff'
         txt_name: str = no_extension_name + '.txt'
-        boto3.resource('s3').Bucket('ocry-czl').download_file(key, pdf_name)
+        boto3.resource('s3').Bucket(BUCKET_NAME).download_file(key, pdf_name)
         subprocess.Popen([
             'convert',
             '-density', '96',
