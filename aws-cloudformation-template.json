@@ -79,6 +79,7 @@
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
+                    "88c45b66-cfb7-4938-a232-98dcf9aef0a3",
                     "88c45b66-cfb7-4938-a232-98dcf9aef0a3"
                 ]
             },
@@ -97,6 +98,7 @@
                     "f9723173-6dfb-481f-887c-a638cb9eb807"
                 ],
                 "iscontainedinside": [
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
@@ -162,6 +164,7 @@
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8"
                 ]
             },
@@ -181,6 +184,7 @@
                     "fb3b9ec7-7781-4a4e-a25b-92b22d3b8000"
                 ],
                 "iscontainedinside": [
+                    "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
                     "af816494-f425-45a7-bf88-b36269841cb8",
@@ -305,7 +309,10 @@
                     },
                     "IntegrationResponses": [
                         {
-                            "StatusCode": 200
+                            "StatusCode": 200,
+                            "ResponseTemplates": {
+                                "application/json": "{\"statusCode\": 200}"
+                            }
                         }
                     ],
                     "Type": "MOCK"
