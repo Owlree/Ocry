@@ -45,7 +45,7 @@ if __name__ == '__main__':
         ]).wait()
         boto3.resource('s3').meta.client.upload_file(
             txt_name, 
-            'ocry-czl', 
+            BUCKET_NAME, 
             'txt/' + txt_name)
         os.remove(pdf_name)
         os.remove(tiff_name)
